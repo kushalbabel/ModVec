@@ -5,13 +5,19 @@ using namespace std;
 template <class T>
 class nvec
 {
-    int capacity,size;
-    vector<T*> references;
+    int capacity 		//fillee in reference
+    int size;
+    int currArraySize;
+    int currRefSize;
+    T* references[100];
+
     public:
     nvec()
-    {
-        capacity=1;
+    {	
+    	currArraySize =0;
+        capacity=0;
         size=0;
+        currSize =0;
     }
     nvec(int n)
     {
@@ -30,6 +36,10 @@ class nvec
     }
     void push_back(T t)
     {
-
+    	if (size<capacity){
+    		references[currRefSize[currArraySize] ] = t;
+    		currArraySize++;
+    		
+    	}
     }
 };
